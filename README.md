@@ -1,4 +1,4 @@
-# CURSO-BASICO-JAVASCRIPTT
+# CURSO-BASICO-JAVASCRIPT
 <p align="center">
   <img src="cursojavascript.png" alt="Curso JavaScript - De BÁSICO a DOM">
 </p>
