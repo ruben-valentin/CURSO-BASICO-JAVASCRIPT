@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo DOM en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Ejemplo del DOM en JavaScript</h1>
+    <p class="parrafo">Este es un párrafo de ejemplo.</p>
+    <ul id="lista">
+        <li class="item">Elemento 1</li>
+        <li class="item">Elemento 2</li>
+        <li class="item">Elemento 3</li>
+    </ul>
+    <button id="boton">Cambiar Texto</button>
+    <button id="agregar">Agregar Elemento</button>
+
+    <script>
+        // Accediendo a elementos del DOM
+        console.log(document.title);
+        console.log(document.body);
+
+        // Selección de elementos
+        let titulo = document.getElementById("titulo");
+        let parrafo = document.querySelector(".parrafo");
+        let lista = document.querySelector("#lista");
+
+        // Modificar contenido
+        console.log(parrafo.textContent);
+        parrafo.textContent = "Texto modificado con JavaScript.";
+
+        // Agregar un nuevo elemento a la lista
+        document.getElementById("agregar").addEventListener("click", function() {
+            let nuevoItem = document.createElement("li");
+            nuevoItem.textContent = "Nuevo elemento";
+            lista.appendChild(nuevoItem);
+        });
+
+        // Cambiar clase con classList
+        document.getElementById("boton").addEventListener("click", function() {
+            titulo.classList.toggle("highlight");
+        });
+
+        // Event delegation
+        lista.addEventListener("click", function(event) {
+            if (event.target.tagName === "LI") {
+                alert("Clic en: " + event.target.textContent);
+            }
+        });
+    </script>
+</body>
+</html>
