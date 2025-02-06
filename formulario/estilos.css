@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 80px 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to top left, #43CBFF, #9708CC);
+    font-family: "Poppins", sans-serif;
+}
+
+input, textarea, button{
+    font: inherit;
+}
+
+.form{
+    background-color: #201F1F;
+    padding: 4rem 2rem ;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 500px;
+    color: white;
+    
+}
+
+.form__title{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.form__inputs{
+    display: grid;
+    gap: 1.6rem;
+}
+
+[data-status="error"]{
+    --border-color: #F15152;
+}
+
+[data-status="success"]{
+    --border-color: #23CE6B;
+}
+
+.form__label{
+    display: grid;
+    gap: .6rem;
+    --message: attr(data-message);
+}
+
+.form__label::after{
+    content: var(--message);
+    color: #F15152;
+}
+
+.form__input{
+    background-color: #343333;
+    border: 1px solid ;
+    border-color: var(--border-color, #8D8D8D);
+    outline: none;
+    border-radius: 5px;
+    padding: .7rem 1rem;
+    color: #cdc9c9;
+}
+
+[id="message"]{
+    min-width: 100%;
+    resize: vertical;
+    min-height: 80px;
+    max-height: 200px;
+}
+
+.form__input:focus{
+    border-color: #6088EE;
+}
+
+
+
+.form__btn{
+    cursor: pointer;
+    margin-top: 1.5rem;
+    display: inline-block;
+    background-color: #6088EE;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.form__dialog{
+    inset: 0;
+    margin: auto;
+    width: max-content;
+    display: flex;
+    opacity: 0;
+    padding: 0;
+    border-radius: 10px;
+    transition: .1s opacity;
+    pointer-events: none;
+}
+
+.form__dialog[open]{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.form__dialog::backdrop{
+    background-color: #000000a0;
+}
+
+.form__content{
+    padding: 3rem 2rem;
+}
+
+.form__svg{
+    width: 100%;
+    height: max-content;
+    max-width:350px;
+}
+
+.form__dialog-title{
+    font-size: 2rem;
+}

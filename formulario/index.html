@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+
+    <form class="form" novalidate>
+
+        <h2 class="form__title">Contact us</h2>
+
+        <article class="form__inputs">
+
+            <label class="form__label" data-message="" data-status="normal">
+                Name:
+
+                <input type="text" class="form__input" id="name" placeholder="Rachel Doe" data-text="Nombre">
+
+            </label>
+
+            <label class="form__label" data-message="" data-status="normal">
+                Email:
+
+                <input type="email" class="form__input" id="email" placeholder="Hola@hola.com" data-text="Correo">
+
+            </label>
+
+            <label class="form__label" data-message="" data-status="normal">
+                Message:
+
+                <textarea class="form__input" id="message" placeholder="Type your message here..." data-text="Mensaje"></textarea>
+            </label>
+
+        </article>
+
+        <button type="submit" class="form__btn">
+            Send email
+        </button>
+
+
+        <dialog class="form__dialog">
+            <section class="form__content">
+
+                <img src="./assets/email-illustration.svg" class="form__svg">
+
+                <h2 class="form__dialog-title">¡Correo Enviado!</h2>
+
+                <button class="form__btn form__btn--close" type="button">Enviar Otra Vez</button>
+            </section>
+        </dialog>
+
+    </form>
+
+    <script src="./app.js" type="module"></script>
+</body>
+</html>
