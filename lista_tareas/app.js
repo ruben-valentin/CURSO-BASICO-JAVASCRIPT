@@ -9,14 +9,11 @@ let inputTexto = document.getElementById("texto");
 function addTask() {
     if (inputTexto.value !== "") {
         let nuevoItem = document.createElement("li");
+        nuevoItem.setAttribute("class", "my-3");
         nuevoItem.textContent = inputTexto.value; // Esto es el valor que hay escrito en el input
-        nuevoItem.addEventListener("click", function () {
-            console.log(nuevoItem);
-            console.log("Borrando tarea: " + nuevoItem.textContent);
-            nuevoItem.remove();
-        });
         lista.appendChild(nuevoItem);
         addButtonBorrar(nuevoItem);
+    
     }
 };
 
@@ -24,8 +21,13 @@ function addTask() {
 function addButtonBorrar(nuevoItem) {
     let buttonBorrar = document.createElement("button");
     buttonBorrar.textContent = "Borrar";
-    buttonBorrar.setAttribute("class", " mx-3 btn btn-primary");
+    buttonBorrar.setAttribute("class", "mx-3 btn btn-primary float-start");
     console.log(buttonBorrar);
+    buttonBorrar.addEventListener("click", function () {
+        console.log(buttonBorrar);
+        console.log("Borrando tarea: " + nuevoItem.textContent);
+        nuevoItem.remove();
+    });
     nuevoItem.appendChild(buttonBorrar);
 };
 
